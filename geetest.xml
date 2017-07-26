@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="captcha" method="upgrade">
+    <name>plg_captcha_geetest</name>
+    <author>ZhangTianJie</author>
+    <creationDate>2017-07-09</creationDate>
+    <copyright>ZhangTianJie All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later.</license>
+    <authorEmail>807261773@qq.com</authorEmail>
+    <authorUrl>www.zhangtianjie.com</authorUrl>
+    <version>1.0.0</version>
+    <description>PLG_CAPTCHA_GEETEST_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="geetest">geetest.php</filename>
+        <filename>class.geetestlib.php</filename>
+        <folder>language</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="public_key"
+                        type="text"
+                        default="b46d1900d0a894591916ea94ea91bd2c"
+                        label="PLG_GEETEST_PUBLIC_KEY_LABEL"
+                        description="PLG_GEETEST_PUBLIC_KEY_DESC"
+                        required="true"
+                        filter="string"
+                        size="50"/>
+
+                <field
+                        name="private_key"
+                        type="text"
+                        default="36fc3fe98530eea08dfc6ce76e3d24c4"
+                        label="PLG_GEETEST_PRIVATE_KEY_LABEL"
+                        description="PLG_GEETEST_PRIVATE_KEY_DESC"
+                        required="true"
+                        filter="string"
+                        size="50"/>
+                <field
+                        name="https"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="false"
+                        label="PLG_GEETEST_HTTPS_LABEL"
+                        description="PLG_GEETEST_HTTPS_DESC">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+                <field
+                        name="sandbox"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="false"
+                        label="PLG_GEETEST_SANDBOX_LABEL"
+                        description="PLG_GEETEST_SANDBOX_DESC">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+                <field name="product"
+                       type="list"
+                       default="float"
+                       label="PLG_GEETEST_PRODUCT_LABEL"
+                       description="PLG_GEETEST_PRODUCT_DESC">
+                    <option value="float">PLG_GEETEST_PRODUCT_VALUE_FLOAT</option>
+                    <option value="embed">PLG_GEETEST_PRODUCT_VALUE_EMBED</option>
+                    <option value="popup">PLG_GEETEST_PRODUCT_VALUE_POPUP</option>
+                </field>
+                <field name="lang"
+                       type="list"
+                       default="zh-cn"
+                       label="PLG_GEETEST_LANG_LABEL"
+                       description="PLG_GEETEST_LANG_DESC">
+                    <option value="zh-cn">zh-cn</option>
+                    <option value="zh-tw">zh-tw</option>
+                    <option value="en">en</option>
+                    <option value="ja">ja</option>
+                    <option value="ko">ko</option>
+                </field>
+                <field
+                        name="holdform"
+                        type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="false"
+                        label="PLG_GEETEST_HOLDFORM_LABEL"
+                        description="PLG_GEETEST_HOLDFORM_DESC">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
