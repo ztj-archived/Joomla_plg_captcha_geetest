@@ -65,16 +65,16 @@ class PlgCaptchaGeetest extends JPlugin
                 captchaObj.appendTo("#' . $id . '");
                 //是否阻止表单提交
                 if(' . $holdform . '){
-                    var form_ele=jQuery("#' . $id . '").parentsUntil("form").parent();
+                    var form_ele=jQuery("#' . $id . '").parents("form");
                     //阻止表单提交
                     var form_submit=function(){return false;};
                     //节点生成完毕
                     captchaObj.onReady(function(){
-                        jQuery("body").on("submit", form_submit, form_submit);
+                        form_ele.on("submit", form_submit);
                     });
                     //验证成功
                     captchaObj.onSuccess(function(){
-                        jQuery("body").off("submit", form_submit, form_submit);
+                        form_ele.off("submit", form_submit);
                     });
                 }
             }
